@@ -1,0 +1,28 @@
+.container-home
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  justify-content: flex-start
+  gap: 1rem
+  .toolbar
+    order: 1
+  .content
+    order: 2
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: center
+    @media screen and (max-width: 26rem)
+     padding: 0.4em 1em 0.4em 1em
+    @media screen and (min-width: 26.1rem)
+     padding: 0.5em 10em 0.5em 10em
+    .menu
+      order: 1
+    .info
+      order: 2
+
+.h1
+  font-size: 4em
+  padding: 0px
+  margin: 0px
+  line-height: 100%
