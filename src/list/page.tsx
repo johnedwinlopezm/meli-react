@@ -27,7 +27,7 @@ export default function List() {
             setData(response)
         }
         GetProducts();
-    }, [])
+    }, [products])
     // const nameProduct = props?.searchParams.nameProduct;
     return (
 
