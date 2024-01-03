@@ -4,7 +4,8 @@ export interface Item {
     price: Price,
     picture: string,
     condition: string,
-    free_shipping: Boolean
+    free_shipping: boolean,
+    isFirts?: boolean
 }
 
 export interface Price {

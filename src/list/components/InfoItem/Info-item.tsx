@@ -1,12 +1,19 @@
+import { useNavigate } from 'react-router-dom';
 import { Item } from '../../../models/item';
 import styles from './Info-item.module.sass'
 
-const shipping = '../../../assets/images/ic_shipping.png';
+const shipping = 'ic_shipping.png';
 
-export const InfoItem = (item:Item, isFirst:boolean) => {
-
+export const InfoItem = (item:Item) => {
+    const navigate = useNavigate();
+    const goDescription = () => {
+        navigate({
+            pathname: `/items/${item.id}`,
+        });
+    }
+    const line = item.isFirts ? '': 'boderLine';
     return (
-        <div className={styles.containerItem}  >
+        <div className={styles.containerItem + ' ' + styles[line]} onClick={goDescription} >
             <div className={styles.image}>
                 <img src={item.picture} title="picture"/>
             </div>
@@ -14,7 +21,7 @@ export const InfoItem = (item:Item, isFirst:boolean) => {
                 <div className="price-list">{ '$ '+item.price.amount }<img src={shipping}/></div>
                 <div className="text-list">{ item.title }</div>
             </div>
-            <div className="ubicacion">
+            <div className={styles.ubicacion}>
                 <div className="text-small">{ item.condition }</div>
             </div>
         </div >

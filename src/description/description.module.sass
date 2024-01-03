@@ -1,0 +1,55 @@
+.containerDetail
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    justify-content: flex-start
+    background-color: var(--background-color-list-products)
+    border-radius: 4px
+    padding: 2rem
+    .imagen
+        order: 0
+        @media screen and (max-width: 26rem)
+            display: flex
+            flex-direction: column
+            flex-wrap: nowrap
+            justify-content: space-around
+        @media screen and (min-width: 26.1rem)
+            display: flex
+            flex-direction: row
+            flex-wrap: nowrap
+            justify-content: space-around
+        .row1
+            order: 0
+            img
+                width: 95%
+                max-width: 680px
+            .description
+                order: 1
+                display: flex
+                flex-direction: column
+                flex-wrap: nowrap
+                justify-content: flex-start
+                padding-top: 2rem
+                gap: 2rem
+        .row2
+            order: 1
+            display: flex
+            flex-direction: column
+            flex-wrap: nowrap
+            justify-content: flex-start
+            max-width:18rem
+            .col1
+                padding-bottom: 1rem
+            .col2
+                padding-bottom: 2rem
+            .col3
+                padding-bottom: 2rem
+            .col4
+                button
+                    width: 100%
+.breadcrumb
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    gap: 0.5em
+    padding-bottom: 1rem
