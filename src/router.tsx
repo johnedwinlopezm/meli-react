@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./home/page";
-import List from "./list/page";
 import './App.sass';
-import { Suspense } from "react";
-import Description from "./description/page";
+import React, { Suspense } from "react";
+
+const List = React.lazy(() => import('./list/page'));
+const Description = React.lazy(() => import('./description/page'));
+
 
 export default function Router() {
     return (
@@ -11,8 +13,17 @@ export default function Router() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />}>
-                        <Route path="items" element={<List />} />
-                        <Route path="items/:id" element={<Description />} />
+                        <Route path="items" element={
+                            <Suspense fallback={<BigSpinner />}>
+                                <List />
+                            </Suspense>
+                        } />
+                        <Route path="items/:id" element={
+                            <Suspense fallback={<BigSpinner />}>
+                                <Description />
+                            </Suspense>
+                        }
+                        />
                     </Route>
                 </Routes>
             </BrowserRouter>
