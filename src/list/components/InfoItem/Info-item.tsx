@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Item } from '../../../models/item';
+import { Item } from '../../../shared/models/item';
 import styles from './Info-item.module.sass'
 
 const shipping = 'ic_shipping.png';

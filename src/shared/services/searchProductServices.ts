@@ -1,5 +1,5 @@
-import { ItemDesResponse } from "../../models/itemdesResponse";
-import { Search } from "../../models/search";
+import { ItemDesResponse } from "../models/itemdesResponse";
+import { Search } from "../models/search";
 
 export class SearchProductServices {
     private apiUrl = `http://localhost:3000/api/v1/products/`;

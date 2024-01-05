@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useActionData, useParams } from "react-router-dom";
 import { SearchProductServices } from "../shared/services/searchProductServices";
-import { ItemDesResponse } from "../models/itemdesResponse";
+import { ItemDesResponse } from "../shared/models/itemdesResponse";
 import styles from "./description.module.sass"
 import { BreadCrumb } from "../shared/components/breadcrumb";
 

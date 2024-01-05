@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { SearchProductServices } from "../shared/services/searchProductServices"
 import { InfoItem } from "./components/InfoItem";
-import { Search } from "../models/search";
+import { Search } from "../shared/models/search";
 import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./list.module.sass"
 import { BreadCrumb } from "../shared/components/breadcrumb";
