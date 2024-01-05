@@ -4,7 +4,12 @@ import styles from './Info-item.module.sass'
 
 const shipping = 'ic_shipping.png';
 
-export const InfoItem = (item:Item) => {
+interface InfoProps {
+    item:Item
+}
+
+export const InfoItem = (props: InfoProps) => {
+    const item = props.item
     const navigate = useNavigate();
     const goDescription = () => {
         navigate({

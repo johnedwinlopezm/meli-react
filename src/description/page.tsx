@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useActionData, useParams } from "react-router-dom";
-import { SearchProductServices } from "../services/searchProductServices";
+import { SearchProductServices } from "../shared/services/searchProductServices";
 import { ItemDesResponse } from "../models/itemdesResponse";
 import styles from "./description.module.sass"
+import { BreadCrumb } from "../shared/components/breadcrumb";
 
 const searchServices = SearchProductServices.getInstance();
 
@@ -21,18 +22,7 @@ export default function Description() {
     }, [])
     return (
         <div>
-            <div className={styles.breadcrumb} >
-                {categorias?.map((categoria,index) => {
-                    let content;
-                    if (index + 1 !== categorias.length) {
-                        content = (<label className="text-brand">{categoria + '>'}</label>);
-                    } else {
-                        content = (<label className="text-brand-b" >{categoria}</label>);
-                    }
-                    return (content)
-                })
-                }
-            </div>
+            <BreadCrumb categories={categorias!}/>
             <div className={styles.containerDetail} >
                 <div className={styles.imagen}>
                     <div className={styles.row1}>
